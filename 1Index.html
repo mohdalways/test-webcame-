@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css" media="all">
+      #webcame{
+        background-color: rebeccapurple;
+        width : 300px;
+        height: 300px;
+      }
+    </style>
+</head>
+<body>
+    <video id="webcame" autoplay="true">
+    
+  </video>
+  
+  <script>
+  
+    var video = document.getElementById("webcame");
+    var camera = navigator.mediaDevices.getUserMedia;
+    if(camera){
+    navigator.mediaDevices.getUserMedia({
+        video:true,
+        audio:true
+      })
+    
+    .then(function(streamLive){
+      video.srcObject=streamLive;
+    })
+      .catch(function(error){
+        console.log("error please Try again");
+    })
+    }
+  </script>
+    
+  
+  
+</body>
+
+
+
+</html>
